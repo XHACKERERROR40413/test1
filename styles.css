@@ -1,0 +1,119 @@
+/* Modern, responsive, accessible styles for Task Manager */
+:root {
+  --primary: #4f8cff;
+  --accent: #ffb347;
+  --bg: #f7f9fb;
+  --text: #222;
+  --completed: #b2bec3;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+}
+header h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+#task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+#task-input {
+  flex: 1;
+  padding: 0.75em;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1em;
+}
+#task-form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#task-form button:hover, #task-form button:focus {
+  background: var(--accent);
+  outline: none;
+}
+#tasks-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f6fa;
+  border-radius: 8px;
+  margin-bottom: 0.75em;
+  padding: 0.75em 1em;
+  transition: background 0.2s;
+}
+.task-item.completed {
+  background: #e2e6ea;
+  color: var(--completed);
+  text-decoration: line-through;
+}
+.task-label {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1em;
+}
+.task-actions {
+  display: flex;
+  gap: 0.5em;
+}
+.task-actions button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+  transition: background 0.2s, color 0.2s;
+}
+.task-actions button:focus {
+  outline: 2px solid var(--accent);
+}
+.task-actions button.delete {
+  color: #e17055;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+  }
+  #task-form button {
+    padding: 0 0.7em;
+  }
+}
